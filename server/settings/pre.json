@@ -1,0 +1,22 @@
+{
+  "PrivateKeyPath": "settings/keys/private_key",
+  "PublicKeyPath": "settings/keys/public_key.pub",
+  "JWTExpirationDelta": 24,
+  "UploadDir": "D:/temp/",
+  "mongo": {
+    "Url": "mongodb://%s:%s@localhost/admin",
+    "Password": "pass",
+    "Username": "admin",
+    "Timeout": 10
+  },
+  "permissions": [
+    {
+      "type": "role",
+      "name": "user",
+      "action": "any",
+      "urlRgx": "/api/v1/users/.+",
+      "effect": "allow",
+      "_comment": "type: role/user; name: role name or user email; action: any/get/post/put/delete;  url: regex url; effect: allow/deny;"
+    }
+  ]
+}
